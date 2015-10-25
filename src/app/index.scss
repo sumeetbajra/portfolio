@@ -1,0 +1,165 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+
+a, a:hover, a:active, a:visited{
+  text-decoration: none;
+}
+
+p{
+  line-height: 25px;
+}
+
+.container.main{
+  margin-top: 30px;
+}
+
+.content{
+  width: 88%;
+  float: right;
+}
+
+.portfolio-name{
+  font-family: 'Poiret One', cursive;
+  font-size: 43px;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.side-nav{
+  float: left;
+  padding: 45px 0;
+  color: #aaaeb4;
+  width: 12%;
+  background: #1f2b36;
+  position: fixed;
+  height: 100%;
+  text-align: center;
+
+  a{
+    color: #aaaeb4;
+  }
+
+  a:hover{
+    color: white;
+  }
+
+  a, a:hover, a:active, a:visited{
+    text-decoration: none;
+  }
+
+  ul{
+    list-style: none;
+    padding: 0;
+    text-transform: uppercase;
+    margin: 40px 0;
+
+    li a:hover{
+      color: white;
+      text-decoration: none;
+      border-bottom: solid thin #de4b39;
+    }
+  }
+}
+
+.side-nav ul li{
+  margin: 22px 0;
+}
+
+.feed{
+  text-align: right;
+}
+
+.header{
+  padding: 30px;
+  border-bottom: solid thin #ECECEC;
+}
+
+.section-title{
+  display: inline-block;
+  border-bottom: solid 2px #de4b39;
+  padding-bottom: 8px;
+}
+
+.blog-content{
+  padding-bottom: 25px;
+    border-bottom: solid thin #41B7D8;
+    margin-bottom: 25px;
+}
+
+.blog-title{
+  font-size: 37px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.blog-date{
+  margin: 10px 0;
+}
+
+.blog-teaser{
+  line-height: 26px;
+}
+
+.social .fa{
+  font-size: 26px;
+  margin: 5px 0;
+}
+
+.portfolio-box{
+  overflow: hidden;
+
+  .portfolio-cover{
+    position: absolute;
+    top: -100%;
+    height: 100%;
+    width: 100%;
+    background: rgba(247, 160, 42, .4);
+    color: white;
+    text-align: center;
+    padding-top: 81px;
+    font-size: 24px;
+    transition: .3s top ease-in;
+  }
+}
+
+.portfolio-box:hover .portfolio-cover{
+  top:0;
+}
+
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

@@ -1,0 +1,16 @@
+
+<div class = "col-sm-10 col-sm-offset-1">
+  <div class = "content-begin">
+    <h2 class = "section-title">
+      Login
+    </h2>
+    <div class = "alert alert-danger" ng-if = "loginError">
+      Sorry, authentication error.
+    </div>
+    <form ng-submit = "login.login (loginData)">
+      <input class = "form-control input" ng-model = "loginData.username" placeholder = "Username" type = "text"><br>
+      <input class = "form-control input" ng-model = "loginData.password" placeholder = "Password" type = "password"><br>
+      <button class = "btn btn-primary">Login</button>
+    </form>
+  </div>
+</div>
