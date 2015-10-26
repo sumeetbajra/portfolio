@@ -11,8 +11,8 @@
       .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'PostController',
+        controllerAs: 'post'
       })
       .state('about', {
         url: '/about',
@@ -47,6 +47,12 @@
       .state('addPost', {
         url: '/admin/post/add',
         templateUrl: 'app/admin/addPost.html',
+        controller: 'PostController',
+        controllerAs: 'post'
+      })
+      .state('updatePost', {
+        url: '/admin/post/update/:slug',
+        templateUrl: 'app/admin/editPost.html',
         controller: 'PostController',
         controllerAs: 'post'
       })

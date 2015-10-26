@@ -6,20 +6,20 @@
     <br>
     <div>Welcome {{userData.fname}}</div><br>
 
-    <div class = "admin-select-content">
-      <h3>Add new post</h3><hr>
-      <form ng-submit = "post.addPost(postData)">
+    <div class = "admin-select-content" ng-init = "post.findOne()">
+      <h3>Edit post</h3><hr>
+      <form ng-submit = "post.updatePost(post.postData)">
         <div class = "form-group">
           <label for = "title">
             Title
           </label>
-          <input type = "text" class = "form-control input" type = "text" ng-model = "postData.title">
+          <input type = "text" class = "form-control input" type = "text" ng-model = "post.postData.title">
         </div>
         <div class = "form-group">
           <label for = "content">
             Content
           </label>
-          <wysiwyg textarea-id="question" textarea-class="form-control"  textarea-height="160px" textarea-name="textareaQuestion" textarea-required ng-model="postData.content" enable-bootstrap-title="true"></wysiwyg>
+          <wysiwyg textarea-id="question" textarea-class="form-control"  textarea-height="160px" textarea-name="textareaQuestion" textarea-required ng-model="post.postData.content" enable-bootstrap-title="true"></wysiwyg>
         </div>
         <button class = "btn btn-primary">Submit</button>
         <button class = "btn btn-danger" ui-sref = "adminDashboard">Cancel</button>
