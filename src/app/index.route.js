@@ -41,8 +41,14 @@
       .state('adminDashboard', {
         url: '/admin/dashboard',
         templateUrl: 'app/admin/dashboard.html',
-        controller: 'AdminController',
-        controllerAs: 'admin'
+        controller: 'LoginController',
+        controllerAs: 'login'
+      })
+      .state('addPost', {
+        url: '/admin/post/add',
+        templateUrl: 'app/admin/addPost.html',
+        controller: 'PostController',
+        controllerAs: 'post'
       })
       ;
 

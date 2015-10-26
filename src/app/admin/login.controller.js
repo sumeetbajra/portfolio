@@ -7,15 +7,16 @@ angular
 
   function LoginController ($scope, $rootScope, $state, LoginService) {
 
-    $scope.loginError = false;
+    var vm = this;
+    vm.loginError = false;
 
-    this.login = function (loginData) {
+    vm.login = function (loginData) {
       LoginService.checkLogin(loginData.username, loginData.password).then(function(data) {
         if(data.data.status) {
-          $rootScope.username = loginData.username;
+          $rootScope.userData = data.data.user;
           $state.go('adminDashboard');
         }else{
-          $scope.loginError = true;
+          vm.loginError = true;
         }
       });
 

@@ -1,0 +1,57 @@
+<div class = "col-sm-10 col-sm-offset-1">
+  <div class = "content-begin">
+    <h2 class = "section-title">
+      Dashboard
+    </h2>
+    <br>
+    <div>Welcome {{userData.fname}}</div><br>
+
+    <div>Please select page to edit:</div>
+    <select class = "form-control input" ng-model = "selectedPage">
+      <option value = "">--Select page--</option>
+      <option value = "home">Hompage</option>
+      <option value = "about">About</option>
+      <option value = "portfolio">Portfolio</option>
+      <option value = "blog">Blog</option>
+    </select>
+
+    <div class = "admin-select-content edit-blog" ng-controller = "PostController as post" ng-init = "post.findAll()">
+      <table class = "table table-responsive table-bordered table-striped">
+        <thead>
+          <tr>
+            <td>
+              S.N.
+            </td>
+            <td>
+              Title
+            </td>
+            <td>
+              Created date
+            </td>
+            <td>
+              Actions
+            </td>
+          </tr>
+        </thead>
+        <tbody ng-repeat = "post in post.posts">
+          <tr>
+            <td>
+              {{$index+1}}
+            </td>
+            <td>
+              {{post.title}}
+            </td>
+            <td>
+              {{post.created_at}}
+            </td>
+            <td>
+              <button class = "btn btn-primary btn-sm"><i class = "fa fa-pencil"></i></button>
+              <button class = "btn btn-danger btn-sm"><i class = "fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class = "btn btn-primary" ui-sref = "addPost">Add new post</button>
+    </div>
+  </div>
+</div>
