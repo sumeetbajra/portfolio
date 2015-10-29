@@ -32,6 +32,12 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+      .state('viewPost', {
+        url: '/blog/post/:slug',
+        templateUrl: 'app/main/viewPost.html',
+        controller: 'PostController',
+        controllerAs: 'blogPost'
+      })
       .state('adminLogin', {
         url: '/admin/login',
         templateUrl: 'app/admin/login.html',

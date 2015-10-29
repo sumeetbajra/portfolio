@@ -12,6 +12,7 @@ angular
     vm.findOne = function() {
       PostService.findOne($stateParams.slug).then(function(data) {
         vm.postData = data.data;
+        console.log(vm.postData);
       });
     }
 

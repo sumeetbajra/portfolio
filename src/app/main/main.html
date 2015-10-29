@@ -2,14 +2,14 @@
     Hi! I am Sumit Bajracharya.<br>
     Welcome to my porftolio.
 </div>
-<div class = "col-sm-10 col-sm-offset-1" ng-init = "post.findAll()">
+<div class = "col-sm-8 col-sm-offset-2" ng-init = "post.findAll()">
   <div class = "recent-blog">
     <h2 class = "section-title">
       Blog
     </h2>
     <div class = "blog-content" ng-repeat = "teaser in post.posts">
       <div class = "blog-title">
-        {{teaser.title}}
+        <a ng-href = "#/blog/post/{{teaser.slug}}">{{teaser.title}}</a>
       </div>
       <div class = "blog-date">
         {{teaser.created_at | date:'dd MMM yyyy'}}

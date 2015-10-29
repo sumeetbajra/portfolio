@@ -120,6 +120,14 @@ p{
 .blog-title{
   font-size: 37px;
   font-family: 'Dosis', sans-serif;
+
+  a{
+    color: #43402f;
+  }
+
+  a:hover{
+    color: #de4b39;
+  }
 }
 
 .blog-date{
@@ -158,6 +166,28 @@ p{
 
 .admin-select-content{
   margin-top: 20px;
+}
+
+#post-title-banner{
+  padding: 20px 0;
+  font-size: 47px;
+  color: #43402f;
+}
+
+.view-blog-content{
+  margin-top: 20px;
+
+  .blog{
+    line-height: 29px;
+    margin-top: 16px;
+  }
+}
+
+.blog, .blog-teaser{
+  img{
+    max-width: 100%;
+    border: solid thin #ECECEC;
+  }
 }
 
 
