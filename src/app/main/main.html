@@ -3,17 +3,78 @@
     Welcome to my porftolio.
 </div>
 <div class = "col-sm-8 col-sm-offset-2" ng-init = "post.findAll()">
+  <div class = "recent-work">
+    <h2 class = "section-title">
+      SOME OF MY WORKS
+    </h2>
+    <div class = "content-begin row">
+      <div class = "col-md-4 portfolio-box">
+        <a href = "#">
+          <img src = "assets/images/1.jpg" class = "img-responsive">
+          <div class = "portfolio-cover">
+            Visit Site
+          </div>
+        </a>
+      </div>
+      <div class = "col-md-4 portfolio-box">
+        <a href = "#">
+          <img src = "assets/images/2.jpg" class = "img-responsive">
+          <div class = "portfolio-cover">
+            Visit Site
+          </div>
+        </a>
+      </div>
+      <div class = "col-md-4 portfolio-box">
+        <a href = "#">
+          <img src = "assets/images/3.png" class = "img-responsive">
+          <div class = "portfolio-cover">
+            Visit Site
+          </div>
+        </a>
+      </div>
+      <div class = "col-md-4 portfolio-box">
+        <a href = "#">
+          <img src = "assets/images/4.jpg" class = "img-responsive">
+          <div class = "portfolio-cover">
+            Visit Site
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class = "divider"></div>
   <div class = "recent-blog">
     <h2 class = "section-title">
-      Blog
+      recent blog posts
     </h2>
     <div class = "blog-content" ng-repeat = "teaser in post.posts">
       <div class = "blog-title">
         <a ng-href = "#/blog/post/{{teaser.slug}}">{{teaser.title}}</a>
       </div>
-      <div class = "blog-date">
-        {{teaser.created_at | date:'dd MMM yyyy'}}
-      </div>
+      <div class = "post-meta">
+        Posted on {{teaser.created_at | date:'dd MMM yyyy'}} &nbsp;&nbsp; by Sumit Bajracharya
+        <div class = "post-meta-share">
+          <span>
+            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
+            <script>
+              (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                //if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1651819458366581";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+            </script>
+          </span>
+          <span>
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+            <script src="//platform.twitter.com/widgets.js"></script>
+          </span>
+          <span>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <g:plus action="share"></g:plus>
+          </span>
+        </div>
       <div class = "blog-teaser">
         <p ng-bind-html = "teaser.content | limitTo: 1000"></p><br>
         <button class = "btn btn-primary">Read more</button>

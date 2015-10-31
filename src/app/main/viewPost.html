@@ -3,7 +3,29 @@
     {{blogPost.postData.title}}
   </div>
   <div class = "post-meta">
-    {{blogPost.postData.created_at | date:'dd MMM yyyy'}}
+    Posted on {{blogPost.postData.created_at | date:'dd MMM yyyy'}} &nbsp;&nbsp; by Sumit Bajracharya
+    <div class = "post-meta-share">
+      <span>
+        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
+        <script>
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            //if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1651819458366581";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        </script>
+      </span>
+      <span>
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+        <script src="//platform.twitter.com/widgets.js"></script>
+      </span>
+      <span>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <g:plus action="share"></g:plus>
+      </span>
+    </div>
   </div>
   <div class = "blog">
       <p ng-bind-html = "blogPost.postData.content"></p><br>
