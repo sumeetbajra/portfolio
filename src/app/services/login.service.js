@@ -11,9 +11,9 @@ angular
       checkLogin: function(username, password) {
         return $http({
           'method': 'POST',
-          'url': 'http://localhost:8080/users/login',
+          'url':  $rootScope.serviceUrl + '/users/login',
           'data': {username: username, password: password}
         });
-      }      
+      }
     }
   }
