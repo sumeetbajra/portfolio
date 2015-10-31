@@ -3,42 +3,40 @@ angular
   .module('portfolio')
   .factory('PostService', PostService);
 
-  PostService.$inject = ['$http', '$rootScope'];
+  PostService.$inject = ['$http', 'SERVICE_URL'];
 
-  $rootScope.serviceUrl = "http://sumeetbajra.heroku.com";
-
-  function PostService($http, $rootScope) {
+  function PostService($http, SERVICE_URL) {
     return {
       addPost: function(postData) {
         return $http({
           'method': 'POST',
-          'url': $rootScope.serviceUrl + '/post/add',
+          'url': SERVICE_URL + '/post/add',
           'data': postData
         });
       },
       updatePost: function(postData) {
         return $http({
           'method': 'POST',
-          'url': $rootScope.serviceUrl + '/post/update',
+          'url': SERVICE_URL + '/post/update',
           'data': postData
         });
       },
       deletePost: function(id) {
         return $http({
           'method': 'GET',
-          'url':  $rootScope.serviceUrl + '/post/delete/' + id
+          'url': SERVICE_URL + '/post/delete/' + id
         });
       },
       findOne: function(slug) {
         return $http({
           'method': 'GET',
-          'url':  $rootScope.serviceUrl + '/post/findOne/' + slug,
+          'url':  SERVICE_URL + '/post/findOne/' + slug,
         });
       },
       findAll: function() {
         return $http({
           'method': 'GET',
-          'url':  $rootScope.serviceUrl + '/post/findAll'
+          'url':  SERVICE_URL + '/post/findAll'
         });
       },
     }

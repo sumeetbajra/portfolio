@@ -5,6 +5,7 @@
   angular
     .module('portfolio')
     .constant('malarkey', malarkey)
-    .constant('moment', moment);
+    .constant('moment', moment)
+    .constant('SERVICE_URL', 'https://sumeetbajra.heroku.com');
 
 })();
