@@ -6,6 +6,6 @@
     .module('portfolio')
     .constant('malarkey', malarkey)
     .constant('moment', moment)
-    .constant('SERVICE_URL', 'https://sumeetbajra.heroku.com');
+    .constant('SERVICE_URL', 'https://sumeetbajra.herokuapp.com');
 
 })();

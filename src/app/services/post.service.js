@@ -34,7 +34,7 @@ angular
         });
       },
       findAll: function() {
-        return $http.get(SERVICE_URL + '/post/findAll');
+        return $http.get(SERVICE_URL + '/post/findAll/');
       },
     }
   }
