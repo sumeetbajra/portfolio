@@ -203,6 +203,7 @@ p{
 }
 
 .reveal-animation {
+      width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -215,6 +216,10 @@ p{
 .post-meta{
   color: #888;
   margin-bottom: 30px;
+
+  .blog-teaser{
+        color: #4A4A4A;
+ }
 }
 
 .post-meta-share{
@@ -230,6 +235,13 @@ p{
     margin-right: 10px;
   }
 }
+
+// .code {
+//       background: #1F2B36;
+//       color: #F8F8F2;
+//       padding: 10px;
+//       border-radius: 5px;
+// }
 
 
 
