@@ -19,7 +19,7 @@
           <label for = "content">
             Content
           </label>
-          <textarea row="20" class = "form-control" ng-model="post.postData.content" enable-bootstrap-title="true"></textarea>
+          <markdown-editor ng-model="post.postData.content"></markdown-editor>
         </div>
         <button class = "btn btn-primary">Submit</button>
         <button class = "btn btn-danger" ui-sref = "adminDashboard">Cancel</button>

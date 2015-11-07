@@ -236,10 +236,16 @@ p{
   }
 }
 
-marked{
+.blog-content{
       pre{
-            background: #333;
+            background: #1F2B36;
             color: white;
+            word-wrap: normal;
+      }
+
+      code{
+            white-space: pre;
+            line-height: 21px;
       }
 }
 
