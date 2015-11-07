@@ -12,7 +12,6 @@ angular
     vm.findOne = function() {
       PostService.findOne($stateParams.slug).then(function(data) {
         vm.postData = data.data;
-        console.log(vm.postData);
       });
     }
 
@@ -34,6 +33,8 @@ angular
 
     vm.updatePost = function(postData) {
       if(postData.title.length > 0 && postData.content.length > 0){
+
+            postData.slug = Slug.slugify(postData.title);
         PostService.updatePost(postData).then(function(data) {
           toastr.success('The post has been updated successfully.');
           $state.go('adminDashboard');

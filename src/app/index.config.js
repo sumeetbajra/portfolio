@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig, hljsServiceProvider) {
+  function config($logProvider, toastrConfig, markedProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -18,7 +18,18 @@
     toastrConfig.progressBar = true;
 
     //hljs
-      
+      markedProvider.setOptions({
+            gfm: true,
+            tables: true,
+            highlight: function (code, lang) {
+                  if (lang) {
+                        return hljs.highlight(lang, code, true).value;
+                  } else {
+                        return hljs.highlightAuto(code).value;
+                  }
+            }
+      });
+
   }
 
 })();
