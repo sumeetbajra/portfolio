@@ -227,7 +227,7 @@ p{
 
   span:first-child{
     position: relative;
-    top: -2px;
+    top: 3px;
     margin-right: 5px;
   }
 
@@ -249,6 +249,10 @@ p{
       }
 }
 
+.facebookCount .pluginCountButton span span {
+      position: relative;
+      top: -3px;
+}
 // .code {
 //       background: #1F2B36;
 //       color: #F8F8F2;

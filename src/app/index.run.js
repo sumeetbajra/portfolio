@@ -23,9 +23,10 @@
 });
 
   /** @ngInject */
-  function runBlock($log) {
+  function runBlock($log, $FB) {
 
     $log.debug('runBlock end');
+    $FB.init('1619673508300494');
   }
 
 })();
