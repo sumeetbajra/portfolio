@@ -8,13 +8,17 @@
 
     <div class = "admin-select-content">
       <h3>Add new post</h3><hr>
-      <form ng-submit = "post.addPost(postData)">
+      <form ng-submit = "post.addPost(postData)" enctype="multipart/form-data">
         <div class = "form-group">
           <label for = "title">
             Title
           </label>
           <input type = "text" class = "form-control input" type = "text" ng-model = "postData.title">
         </div>
+        <div class="button" ngf-select ng-model="postData.featured" name="featured" ngf-pattern="'image/*'"
+    accept="image/*" ngf-max-size="20MB" ngf-min-height="100"
+    ngf-resize="{width: 100, height: 100}">Select</div>
+    Image thumbnail: <img ngf-thumbnail="postData.featured || '/thumb.jpg'">
         <div class = "form-group">
           <label for = "content">
             Content

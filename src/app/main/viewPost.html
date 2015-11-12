@@ -1,15 +1,16 @@
 <div class = "view-blog-content col-sm-8 col-sm-offset-2" ng-init = "blogPost.findOne()">
   <div id = "post-title-banner" class = "blog-title">
-    {{blogPost.postData.title}}
+    {{blogPost.postData.title}}<br>
+    {{blogPost.postData.featured}}
   </div>
   <div class = "post-meta">
     Posted on {{blogPost.postData.created_at | date:'dd MMM yyyy'}} &nbsp;&nbsp; by Sumit Bajracharya
     <div class = "post-meta-share">
           <span>
-                <a facebook-feed-share class="facebookShare" data-shares='shares' data-url='https://sumeetbajra.github.io/dist/blog/{{blogPost.postData.slug}}' data-picture="https://images.unsplash.com/photo-1445251836269-d158eaa028a6?ixlib=rb-0.3.5&q=80&fm=jpg&s=199ad024e77a5f179278e2ce0199e84e" data-name="{{blogPost.postData.title}}" data-description="{{blogPost.postData.content | limitTo: 250}}">{{ shares }}</a>
+                <a facebook-feed-share class="facebookShare" data-shares='shares' data-url='https://sumeetbajra.github.io/dist/blog/{{blogPost.postData.slug}}' data-picture="https://images.unsplash.com/photo-1445251836269-d158eaa028a6?ixlib=rb-0.3.5&q=80&fm=jpg&s=199ad024e77a5f179278e2ce0199e84e" data-name="{{blogPost.postData.title}}" data-description="{{blogPost.postData.content | limitTo: 200}}">{{ shares }}</a>
          </span>
       <span>
-        <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Read this interesting article">Tweet</a>
         <script src="//platform.twitter.com/widgets.js"></script>
       </span>
       <span>
