@@ -102,6 +102,8 @@ p{
 
 .header{
   padding: 30px;
+  position: fixed;
+  width: 88%;  
   border-bottom: solid thin #ECECEC;
 }
 
@@ -176,11 +178,21 @@ p{
 }
 
 #post-title-banner{
-
+      color: white;
+      font-size: 50px;
+      text-align: center;
+      border-bottom: none;
+      height: 100%;
+      display: flex;
+justify-content: center; /* align horizontal */
+align-items: center; /* align vertical */
 }
 
 .view-blog-content{
-  margin-top: 20px;
+  margin-top: 300px;
+  padding-top: 40px;
+  background: white;
+  box-shadow: 4px 1px 9px 3px rgba(0, 0, 0, .3);
 
   .blog{
     line-height: 29px;
@@ -192,6 +204,7 @@ p{
   img{
     max-width: 100%;
     border: solid thin #ECECEC;
+    margin-bottom: 20px;
   }
 }
 
@@ -205,12 +218,20 @@ p{
 .reveal-animation {
       width: 100%;
   position: absolute;
-  top: 0;
+  top: 80px;
   left: 0;
+}
+
+.clear-fix{
+      clear:both;
 }
 
 .animation-wrapper{
   position: relative;
+}
+
+.content-wrapper {
+      background: white;
 }
 
 .post-meta{
@@ -252,6 +273,12 @@ p{
 .facebookCount .pluginCountButton span span {
       position: relative;
       top: -3px;
+}
+
+.thumb {
+      height: 200px;
+      margin: 15px 0;
+      display: block;
 }
 // .code {
 //       background: #1F2B36;

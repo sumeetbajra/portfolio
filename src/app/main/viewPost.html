@@ -1,48 +1,54 @@
-<div class = "view-blog-content col-sm-8 col-sm-offset-2" ng-init = "blogPost.findOne()">
-  <div id = "post-title-banner" class = "blog-title">
-    {{blogPost.postData.title}}<br>
-    {{blogPost.postData.featured}}
-  </div>
-  <div class = "post-meta">
-    Posted on {{blogPost.postData.created_at | date:'dd MMM yyyy'}} &nbsp;&nbsp; by Sumit Bajracharya
-    <div class = "post-meta-share">
-          <span>
-                <a facebook-feed-share class="facebookShare" data-shares='shares' data-url='https://sumeetbajra.github.io/dist/blog/{{blogPost.postData.slug}}' data-picture="https://images.unsplash.com/photo-1445251836269-d158eaa028a6?ixlib=rb-0.3.5&q=80&fm=jpg&s=199ad024e77a5f179278e2ce0199e84e" data-name="{{blogPost.postData.title}}" data-description="{{blogPost.postData.content | limitTo: 200}}">{{ shares }}</a>
-         </span>
-      <span>
-        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Read this interesting article">Tweet</a>
-        <script src="//platform.twitter.com/widgets.js"></script>
-      </span>
-      <span>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <g:plus action="share"></g:plus>
-      </span>
-    </div>
-  </div>
-  <div class = "blog">
-      <div marked = "blogPost.postData.content" class = "blog-content"></div>
-  </div>
-  <h4>Comments</h4><hr>
-  <div id="disqus_thread"></div>
-  <script>
-      /**
-       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-       */
+<div ng-init = "blogPost.findOne()">
+      <div style="background: url('{{serviceUrl}}/images/blog/{{blogPost.postData.featured}}'); height:300px; width: 88%; background-size: cover; background-position: 3px; box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5); position: fixed">
+            <div id = "post-title-banner" class = "blog-title">
+              {{blogPost.postData.title}}<br>
+            </div>
+      </div>
+      <div class = "view-blog-content col-sm-12">
+            <div class="col-sm-8 col-sm-offset-2">
+                  <div class = "post-meta">
+                        Posted on {{blogPost.postData.created_at | date:'dd MMM yyyy'}} &nbsp;&nbsp; by Sumit Bajracharya
+                        <div class = "post-meta-share">
+                              <span>
+                                    <a facebook-feed-share class="facebookShare" data-shares='shares' data-url='https://sumeetbajra.github.io/dist/blog/{{blogPost.postData.slug}}' data-picture="{{serviceUrl}}/images/blog/{{blogPost.postData.featured}}" data-name="{{blogPost.postData.title}}" data-description="{{blogPost.postData.content | limitTo: 200}}">{{ shares }}</a>
+                              </span>
+                              <span>
+                                    <a class="twitter-share-button" ng-href="https://twitter.com/intent/tweet?text={{blogPost.postData.title}} Read more at:">Tweet</a>
+                                    <script src="//platform.twitter.com/widgets.js"></script>
+                              </span>
+                              <span>
+                                    <script src="https://apis.google.com/js/platform.js" async defer></script>
+                                    <g:plus action="share"></g:plus>
+                              </span>
+                        </div>
+                  </div>
 
-      var disqus_config = function () {
-          //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = blog.postData.slug; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-      };
+                  <div class = "blog">
+                        <div marked = "blogPost.postData.content" class = "blog-content"></div>
+                  </div>
+                  <h4>Comments</h4><hr>
+                  <div id="disqus_thread"></div>
+                  <script>
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                        */
 
-      (function() {  // DON'T EDIT BELOW THIS LINE
-          var d = document, s = d.createElement('script');
+                        var disqus_config = function () {
+                              //this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                              this.page.identifier = blog.postData.slug; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
 
-          s.src = '//sumeetbajrablog.disqus.com/embed.js';
+                        (function() {  // DON'T EDIT BELOW THIS LINE
+                              var d = document, s = d.createElement('script');
 
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-      })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                              s.src = '//sumeetbajrablog.disqus.com/embed.js';
+
+                              s.setAttribute('data-timestamp', +new Date());
+                              (d.head || d.body).appendChild(s);
+                        })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </div>
+      </div>
 </div>

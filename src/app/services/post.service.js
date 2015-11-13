@@ -20,11 +20,10 @@ angular
       //   });
       },
       updatePost: function(postData) {
-        return $http({
-          'method': 'POST',
-          'url': SERVICE_URL + '/post/update',
-          'data': postData
-        });
+            return Upload.upload({
+                  url: SERVICE_URL + '/post/update',
+                  data: postData
+           });
       },
       deletePost: function(id) {
         return $http({

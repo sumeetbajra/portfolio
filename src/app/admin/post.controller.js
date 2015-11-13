@@ -3,11 +3,13 @@ angular
   .module('portfolio')
   .controller('PostController', PostController);
 
-  PostController.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'toastr', 'PostService', 'Slug', 'ngDialog', 'Upload'];
+  PostController.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'toastr', 'PostService', 'Slug', 'ngDialog', 'Upload', 'SERVICE_URL'];
 
-  function PostController($scope, $rootScope, $state, $stateParams, toastr, PostService, Slug, ngDialog, Upload) {
+  function PostController($scope, $rootScope, $state, $stateParams, toastr, PostService, Slug, ngDialog, Upload, SERVICE_URL) {
 
     var vm = this;
+
+    $rootScope.serviceUrl = SERVICE_URL
 
     vm.findOne = function() {
       PostService.findOne($stateParams.slug).then(function(data) {
@@ -23,8 +25,9 @@ angular
 
     vm.addPost = function(postData) {
       if (postData.featured) {
-            Upload.rename(postData.featured, Date.now() + '.' + postData.featured.$ngfName.split('.')[1]);
+            Upload.rename(postData.featured, Date.now() + '.' + postData.featured.name.split('.')[1]);
       }
+      console.log(postData);
       if(postData.title.length > 0 && postData.content.length > 0){
         postData.slug = Slug.slugify(postData.title);
         PostService.addPost(postData).then(function(data) {
@@ -34,23 +37,15 @@ angular
       }
     }
 
-    vm.upload = function(file) {
-      Upload.upload({
-           url: 'http://localhost:8080/post/uploadFeatured',
-           data: {featured: file}
-      }).then(function (resp) {
-           console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-      }, function (resp) {
-           console.log('Error status: ' + resp.status);
-      }, function (evt) {
-           var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-           console.log('progress: ' + progressPercentage + '% ' + evt.config.data.featured.name);
-      });
-   }
-
-    vm.updatePost = function(postData) {
+    vm.updatePost = function(post) {
+          postData = post.postData;
+    if (post.featured) {
+          postData.featured = post.featured;
+         Upload.rename(postData.featured, Date.now() + '.' + postData.featured.name.split('.')[1]);
+    }
       if(postData.title.length > 0 && postData.content.length > 0){
             postData.slug = Slug.slugify(postData.title);
+            console.log(postData);
         PostService.updatePost(postData).then(function(data) {
           toastr.success('The post has been updated successfully.');
           $state.go('adminDashboard');
