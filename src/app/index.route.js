@@ -17,8 +17,8 @@
       .state('about', {
         url: '/about',
         templateUrl: 'app/main/about.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'PostController',
+        controllerAs: 'about'
       })
       .state('portfolio', {
         url: '/portfolio',

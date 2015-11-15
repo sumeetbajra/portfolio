@@ -11,11 +11,14 @@ angular
 
     $rootScope.serviceUrl = SERVICE_URL
 
-    vm.findOne = function() {
-      PostService.findOne($stateParams.slug).then(function(data) {
+    vm.findOne = function($slug) {
+          if($slug == undefined) {
+                $slug = $stateParams.slug;
+          }
+      PostService.findOne($slug).then(function(data) {
         vm.postData = data.data;
-      });
-    }
+      });    
+   }
 
     vm.findAll = function() {
       PostService.findAll().then(function(data) {

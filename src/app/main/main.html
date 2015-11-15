@@ -1,79 +1,83 @@
 <div class="content-wrapper">
-<div class = "portfolio-name">
-    Hi! I am Sumit Bajracharya.<br>
-    Welcome to my porftolio.
-</div>
-<div class = "col-sm-8 col-sm-offset-2" ng-init = "post.findAll()">
-  <div class = "recent-work">
-    <h2 class = "section-title">
-      SOME OF MY WORKS
-    </h2>
-    <div class = "content-begin row">
-      <div class = "col-md-4 portfolio-box">
-        <a href = "#">
-          <img src = "assets/images/1.jpg" class = "img-responsive">
-          <div class = "portfolio-cover">
-            Visit Site
+      <div style="background: url('http://sumeetbajra.herokuapp.com/images/home.jpg'); width: 88%; background-size: cover; background-position: 0px -150px; box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5); position: fixed; color: white;">
+            <div class = "portfolio-name">
+                Hi! I am Sumit Bajracharya.<br>
+                Welcome to my porftolio.
+            </div>
+      </div>
+<div class = "banner-after-content col-sm-12" id="home-banner-after-content">
+      <div class = "col-sm-8 col-sm-offset-2" ng-init = "post.findAll()">
+        <div class = "recent-work">
+          <h2 class = "section-title">
+            SOME OF MY WORKS
+          </h2>
+          <div class = "content-begin row">
+            <div class = "col-md-4 portfolio-box">
+              <a href = "#">
+                <img src = "assets/images/1.jpg" class = "img-responsive">
+                <div class = "portfolio-cover">
+                  Visit Site
+                </div>
+              </a>
+            </div>
+            <div class = "col-md-4 portfolio-box">
+              <a href = "#">
+                <img src = "assets/images/2.jpg" class = "img-responsive">
+                <div class = "portfolio-cover">
+                  Visit Site
+                </div>
+              </a>
+            </div>
+            <div class = "col-md-4 portfolio-box">
+              <a href = "#">
+                <img src = "assets/images/3.png" class = "img-responsive">
+                <div class = "portfolio-cover">
+                  Visit Site
+                </div>
+              </a>
+            </div>
+            <div class = "col-md-4 portfolio-box">
+              <a href = "#">
+                <img src = "assets/images/4.jpg" class = "img-responsive">
+                <div class = "portfolio-cover">
+                  Visit Site
+                </div>
+              </a>
+            </div>
           </div>
-        </a>
-      </div>
-      <div class = "col-md-4 portfolio-box">
-        <a href = "#">
-          <img src = "assets/images/2.jpg" class = "img-responsive">
-          <div class = "portfolio-cover">
-            Visit Site
-          </div>
-        </a>
-      </div>
-      <div class = "col-md-4 portfolio-box">
-        <a href = "#">
-          <img src = "assets/images/3.png" class = "img-responsive">
-          <div class = "portfolio-cover">
-            Visit Site
-          </div>
-        </a>
-      </div>
-      <div class = "col-md-4 portfolio-box">
-        <a href = "#">
-          <img src = "assets/images/4.jpg" class = "img-responsive">
-          <div class = "portfolio-cover">
-            Visit Site
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class = "divider"></div>
-  <div class = "recent-blog">
-    <h2 class = "section-title">
-      recent blog posts
-    </h2>
-    <div class = "blog-content" ng-repeat = "teaser in post.posts">
-      <div class = "blog-title">
-        <a ng-href = "/blog/post/{{teaser.slug}}">{{teaser.title}}</a>
-      </div>
-      <div class = "post-meta">
-        Posted on {{teaser.created_at | date:'dd MMM yyyy'}} &nbsp;&nbsp; by Sumit Bajracharya
-        <div class = "post-meta-share">
-             <span>
-                  <a facebook-feed-share class="facebookShare" data-shares='shares' data-url='https://sumeetbajra.github.io/dist/blog/{{teaser.slug}}' data-picture="https://images.unsplash.com/photo-1445251836269-d158eaa028a6?ixlib=rb-0.3.5&q=80&fm=jpg&s=199ad024e77a5f179278e2ce0199e84e" data-name="{{blogPost.postData.title}}" data-description="{{blogPost.postData.content | limitTo: 200}}">{{ shares }}</a>
-            </span>
-            <span>
-              <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Read this interesting article">Tweet</a>
-              <script src="//platform.twitter.com/widgets.js"></script>
-            </span>
-          <span>
-            <script src="https://apis.google.com/js/platform.js" async defer></script>
-            <g:plus action="share"></g:plus>
-          </span>
         </div>
-      <div class = "blog-teaser">
-        <div marked= "teaser.content | limitTo: 1000"></div><br>
-        <button class = "btn btn-primary">Read more</button>
+        <div class = "divider"></div>
+        <div class = "recent-blog">
+          <h2 class = "section-title">
+            recent blog posts
+          </h2>
+          <div class = "blog-content" ng-repeat = "teaser in post.posts">
+            <div class = "blog-title">
+              <a ng-href = "/blog/post/{{teaser.slug}}">{{teaser.title}}</a>
+            </div>
+            <div class = "post-meta">
+              Posted on {{teaser.created_at | date:'dd MMM yyyy'}} &nbsp;&nbsp; by Sumit Bajracharya
+              <div class = "post-meta-share">
+                   <span>
+                        <a facebook-feed-share class="facebookShare" data-shares='shares' data-url='https://sumeetbajra.github.io/dist/blog/{{teaser.slug}}' data-picture="https://images.unsplash.com/photo-1445251836269-d158eaa028a6?ixlib=rb-0.3.5&q=80&fm=jpg&s=199ad024e77a5f179278e2ce0199e84e" data-name="{{blogPost.postData.title}}" data-description="{{blogPost.postData.content | limitTo: 200}}">{{ shares }}</a>
+                  </span>
+                  <span>
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Read this interesting article">Tweet</a>
+                    <script src="//platform.twitter.com/widgets.js"></script>
+                  </span>
+                <span>
+                  <script src="https://apis.google.com/js/platform.js" async defer></script>
+                  <g:plus action="share"></g:plus>
+                </span>
+              </div>
+            <div class = "blog-teaser">
+              <div marked= "teaser.content | limitTo: 1000"></div><br>
+              <button class = "btn btn-primary">Read more</button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="clear-fix"></div>
+      </div>
+      <div class="clear-fix"></div>
+      </div>
 </div>
