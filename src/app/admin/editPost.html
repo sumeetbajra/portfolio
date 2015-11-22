@@ -19,9 +19,10 @@
             <label for = "featured">
              Featured Image (Optional)
           </label>
-             <input type="file" class="button" ngf-select ng-model="post.featured" name="featured" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB" ngf-min-height="100">
+             <!-- <input type="file" class="button" ngf-select ng-model="post.featured" name="featured" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB" ngf-min-height="100">
              <i ng-show="updatePost.featured.$error.maxSize">File too large {{postData.featured.size / 1000000|number:1}}MB: max 2M</i>
-             <img class="img-thumbnail img-responsive thumb" ng-show="updatePost.featured.$valid" ngf-thumbnail="post.featured"><button class="btn btn-default" ng-click="post.featured = null" ng-show="post.featured">Remove</button>
+             <img class="img-thumbnail img-responsive thumb" ng-show="updatePost.featured.$valid" ngf-thumbnail="post.featured"><button class="btn btn-default" ng-click="post.featured = null" ng-show="post.featured">Remove</button> -->
+             <input type="text" class="form-control input" ng-model="post.postData.featuredLink">
       </div>
         <div class = "form-group">
           <label for = "content">

@@ -59,7 +59,7 @@
               Posted on {{teaser.created_at | date:'dd MMM yyyy'}} &nbsp;&nbsp; by Sumit Bajracharya
               <div class = "post-meta-share">
                    <span>
-                        <a facebook-feed-share class="facebookShare" data-shares='shares' data-url='https://sumeetbajra.github.io/dist/blog/{{teaser.slug}}' data-picture="https://images.unsplash.com/photo-1445251836269-d158eaa028a6?ixlib=rb-0.3.5&q=80&fm=jpg&s=199ad024e77a5f179278e2ce0199e84e" data-name="{{blogPost.postData.title}}" data-description="{{blogPost.postData.content | limitTo: 200}}">{{ shares }}</a>
+                        <a facebook-feed-share class="facebookShare" data-shares='shares' data-url='https://sumeetbajra.github.io/dist/blog/{{teaser.slug}}' data-picture="https://googledrive.com/host/0B6U1gvalhSnOc0FTWS02bUNRWG8/{{teaser.featuredLink}}" data-name="{{teaser.title}}" data-description="(teaser.content | limitTo: 200) + '...'">{{ shares }}</a>
                   </span>
                   <span>
                     <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Read this interesting article">Tweet</a>
@@ -71,7 +71,7 @@
                 </span>
               </div>
             <div class = "blog-teaser">
-              <div marked= "teaser.content | limitTo: 1000"></div><br>
+              <div marked= "(teaser.content | limitTo: 800) + '...'"></div><br>
               <button class = "btn btn-primary">Read more</button>
             </div>
           </div>

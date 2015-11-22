@@ -17,7 +17,7 @@ angular
           }
       PostService.findOne($slug).then(function(data) {
         vm.postData = data.data;
-      });    
+      });
    }
 
     vm.findAll = function() {
@@ -42,9 +42,9 @@ angular
 
     vm.updatePost = function(post) {
           postData = post.postData;
-    if (post.featured) {
-          postData.featured = post.featured;
-         Upload.rename(postData.featured, Date.now() + '.' + postData.featured.name.split('.')[1]);
+    if (post.featuredLink) {
+          postData.featuredLink = post.featuredLink;
+         //Upload.rename(postData.featured, Date.now() + '.' + postData.featured.name.split('.')[1]);
     }
       if(postData.title.length > 0 && postData.content.length > 0){
             postData.slug = Slug.slugify(postData.title);
